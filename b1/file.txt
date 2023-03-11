@@ -1,0 +1,3 @@
+Đọc file php
+đọc dòng 1
+đọc dòng 2

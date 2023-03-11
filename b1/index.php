@@ -119,7 +119,7 @@
      strpos(chuỗi gốc,chuỗi muốn tìm) trả về vị trí muốn tìm
      nếu k tìm thấy trả về false
      trim(chuỗi gốc,kí tự muốn xóa)
-
+     
          */
   /* MẢNG 
            mảng thông thường
@@ -132,8 +132,7 @@
          xóa phần tử cuỗi cung array_pop
          xóa phần tử dầu tiên array_shift
          xóa phần tư ở vị trí bất kì unset(tên mảng[key])
-        
-        */
+        chuyển trang dùng header        */
   /*
         $product=array("Sam sung","Iphone 14","Xiao Mi");
         echo "<pre/>";
@@ -172,16 +171,16 @@
    dùng isset() để kiểm tra sự tồn tại
    3. PHUONG THỨC POST dữ liệu gửi lên sẽ bị ẩn đi
    cũng có $_POST
+  
  */
-  echo "<pre/>";
-  var_dump($_GET);
+  
 
   ?>
-    <form action="info.php" method="GET">
+    <form action="login.php" method="POST">
         <div>
-            <input type="text" name="Product Name" id="product-name" placeholder="Producr Name">
+            <input type="text" name="name1" id="product-name" placeholder="Producr Name">
             <div>
-                <input type="text" name="Quantity" id="quantity" placeholder="Quantity">
+                <input type="text" name="quantity" id="quantity" placeholder="Quantity">
             </div>
             <div>
                 <input type="submit" name="btnSubmit" value="Thêm">
