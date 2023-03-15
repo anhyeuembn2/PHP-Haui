@@ -10,6 +10,7 @@
     $password=$_POST['password'] ?? "";
     $sqlInsert="insert into users(username,password) values('$name','$password')";
     $userAdd=mysqli_query($connect,$sqlInsert);
+   
     header("location:user.php");
  }
 

@@ -1,3 +1,7 @@
+<?php require_once "connect.php" ?>
+<?php session_start();?>
+
+
 <html lang="en">
 
 <head>
@@ -34,11 +38,29 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="categories.php">Danh mục</a>
                         </li>
+                        <?php if(empty($_SESSION['name']))  :?>
+                        <li class="nav-item">
+                            <a cla ss="nav-link " href="singin.php">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="singup.php">Đăng kí</a>
+                        </li>
+                        <?php else : ?>
+                        <li class="nav-item">
+                            Hello : <?=$_SESSION['name'] ?>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="logout.php">Đăng xuất</a>
+                        </li>
+
+
+                        <?php endif ?>
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
+
                 </div>
             </div>
         </div>

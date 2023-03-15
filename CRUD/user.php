@@ -4,28 +4,25 @@
 $sql = "SELECT id, username, password FROM users";
 
 // Set default page to 1 if not specified in GET parameter
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-
+$page = isset($_GET['page'])?  $_GET['page'] :1;
+$search=isset($_GET['search']) ? $_GET['search'] : "";
+echo $page.$search;
 // Calculate the total number of records and pages
 $totalResult = mysqli_query($connect, "SELECT COUNT(*) FROM users");
 $count = mysqli_fetch_array($totalResult)[0];
-$limit = 2; // Number of records per page
+$limit = 4; // Number of records per page
 $totalPages = ceil($count / $limit);
 
-// Make sure page number is within range
-if ($page < 1) {
-    $page = 1;
-} elseif ($page > $totalPages) {
-    $page = $totalPages;
-}
+
+
 
 // Calculate the offset for the current page
 $offset = ($page - 1) * $limit;
 
 // Add search filter if specified in GET parameter
 if (!empty($_GET['search'])) {
-    $search = mysqli_real_escape_string($connect, $_GET['search']); // Prevent SQL injection
-    $sql .= " WHERE username LIKE '%$search%'";
+    $search = mysqli_real_escape_string($connect, $_GET['search']); 
+    $sql .= " WHERE username LIKE '%$search%' ";
 }
 
 // Add limit and offset to the query
@@ -88,20 +85,22 @@ $users = mysqli_fetch_all($userSql, MYSQLI_ASSOC);
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             <li class="page-item">
-                <a class="page-link" href="user.php?page=1" aria-label="Previous">
+                <a class="page-link" href="user.php?page=<?=$page<=1 ? 1 : $page-1 ?> " aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
             <?php for($i=1;$i<=$totalPages;$i++):?>
             <li class="page-item">
-                <a class="page-link" href="user.php?page=<?php echo $i?>" aria-label="Previous">
+                <a class="page-link"
+                    href="user.php?page=<?php echo $i?><?php echo ($search!="") ? "&search=$search" : ""?>"
+                    aria-label="Previous">
                     <?php echo $i?>
                 </a>
             </li>
 
             <?php endfor ;?>
-            <li class="page-item" <?php $page=$i ? 'class="active"' :''; ?>>
-                <a class="page-link" href="" aria-label="Next">
+            <li class="page-item">
+                <a class="page-link" href="user.php?page=<?=$page>=$totalPages ? $page : $page+1 ?>" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
