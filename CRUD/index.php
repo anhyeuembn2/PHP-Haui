@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php require_once "header.php"; ?>
 <div class="container">
     <div id="carouselExampleCaptions" class="carousel slide">

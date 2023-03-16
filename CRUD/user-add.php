@@ -5,17 +5,23 @@
 ?>
 <?php require_once "connect.php";?>
 <?php 
- if(isset($_POST['btnAdd'])){
+
+if(isset($_POST['btnAdd'])){
     $name=$_POST['email'] ?? "";
     $password=$_POST['password'] ?? "";
     $sqlInsert="insert into users(username,password) values('$name','$password')";
     $userAdd=mysqli_query($connect,$sqlInsert);
-   
-    header("location:user.php");
- }
-
-
+    if($userAdd){
+        echo "<script>toastr.success('User added successfully')</script>";
+      
+        
+    } else {
+        echo "<script>toastr.error('Error adding user')</script>";
+    }
+}
+        
 ?>
+
 <div class="container mt-4">
     <form action="user-add.php" method="post">
         <div class="col-md-4">
