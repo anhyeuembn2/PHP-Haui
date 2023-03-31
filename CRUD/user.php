@@ -8,10 +8,10 @@ $page = isset($_GET['page'])?  $_GET['page'] :1;
 $search=isset($_GET['search']) ? $_GET['search'] : "";
 echo $page.$search;
 // Calculate the total number of records and pages
-$totalResult = mysqli_query($connect, "SELECT COUNT(*) FROM users");
+$totalResult = mysqli_query($connect, "SELECT COUNT(*) FROM users"); // lay ra tong so hang trong bang
 $count = mysqli_fetch_array($totalResult)[0];
 $limit = 4; // Number of records per page
-$totalPages = ceil($count / $limit);
+$totalPages = ceil($count / $limit); // tinh ra so trang
 
 
 
