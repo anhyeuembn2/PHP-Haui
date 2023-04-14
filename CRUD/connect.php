@@ -7,6 +7,11 @@ $connect=mysqli_connect($servername,$username,$password,$db);
 if (!$connect) {
   die("Connection failed: " . mysqli_connect_error());
 }
-
+function select($table){
+  global $connect;
+  $sql="select * from $table";
+  $query=$connect->query($sql);
+  return $query;
+}
 
 ?>

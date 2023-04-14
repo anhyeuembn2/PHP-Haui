@@ -1,0 +1,2 @@
+1	CNTT	Công Nghệ Thông Tin
+2	KTPM	Kĩ Thuật Phần Mềm

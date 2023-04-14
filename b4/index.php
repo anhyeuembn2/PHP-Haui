@@ -1,72 +1,89 @@
+<?php
+  if(isset($_POST['btn'])){
+    $id=$_POST['id'];  
+    $name=$_POST['nameId'];
+    $desc=$_POST['desc'];
+    // lây dư liệu nguwoif dùng nhập từu form
+  
+   if(file_exists('data.txt')){ // kiêm tra xem file data.txt có tồn tịa hay chưa
+      $file=fopen("data.txt","a"); // đã tồn tai thì mình sẽ viết bổ sung vào file
+   }else{ 
+     $file=fopen("data.txt","w"); // tạo ra file mới để viết 
+   }
+   fwrite($file,$id."\t".$name."\t".$desc."\n"); // viết vào file
+   fclose($file); // đóng file
+  }
+?>
 <?php 
- // gettype lay ra kieu du lieu cua bien
- // settype($ten_bien,kieu_du lieu)
- // hoc ve mang 1 chieu
- $course=array("JS","HTML5","CSS3","ReactJS");
- echo "<pre/>";
- var_dump($course);
- echo "<br/>";
- $age=array("Peter"=>"35","Ben"=>"37","Joe"=>"20");
- echo "<pre/>";
- var_dump($age);
- $cars = array (
-    array("Volvo",22,18),
-    array("BMW",15,13),
-    array("Saab",5,2),
-    array("Land Rover",17,15)
-  );
-  echo "<pre/>";
-  var_dump($cars);
- // array_keys() liet ke key trong mang
- // array_keys_exits() kiem tra key co ton tai trong mang hay khong
- // count trả về sô phần tử trong mảng
- // array_change_key_case() chuyên mang thanh chu hoa or thuogng (CASE_UPER,CASE_LOWER)
- // array_chunk(tham so 1,tham so 2,tham so 3)
  /*
- tham so 1 :ten mang
- tham so 2: so phan tu muon co
- tham so 3 :true/false  neu la true se la lay ra key-> value
- con false se la index-value
-array_colum(tenmang,tencot) và tạo ra 1 mang moi chua cac value cua ten cot
-array_diff(mang1,mang2) tra ve gia tri khac khi so sanh value
-array_diff_key(mang1,mang2) tra ve gia tri khac khi so snah value
-array_diff_assoc()) tra ve gia tri khac khi so sanh key va value
-array_diff_uassoc() tra ve gia tri 
+ fwrite() viết vào file
+ làm việc với file
+ để mở file t dùng câu lệnh fopen(tenfile,option)
+ option thứ 1: 
+ r chỉ đọc 
+ r+ dọc và viết
+ w nếu nếu file chưa tồn tai thì sẽ tạo file mới
+ a nếu file tồn tại viêt vào file luôn
+ để dọc file t dung fread
+ đọc 1 dòng trên file ta fgets
+ kiểm tra sự kết thúc của file feof hay dùng while
+ kiểm tra sự tồn tại của file ta dùng file_exits($tenFile)
+
  */
-function myfunction($a,$b)
-{
-if ($a===$b)
-  {
-  return 0;
-  }
-  return ($a>$b)?1:-1;
-}
-$a1=array("a"=>"red","b"=>"green","c"=>"blue");
-$a2=array("d"=>"red","b"=>"green","e"=>"blue");
-
-$result=array_diff_uassoc($a1,$a2,"myfunction");
-print_r($result);
-// array_filter sủ dụng callback dung de loc
-function test_odd($var)
-  {
-  return $var%2==0;
-  }
-
-$a1=array(1,3,2,3,4);
-// array_map dẻ tao ra mang moi
-print_r(array_filter($a1,"test_odd"));
-// array_pad() dung de them phan tu (mang,so phan tu muon them,gia tri them)
-$a=array("red","green");
-print_r(array_pad($a,5,"blue"));
-$a=array("red","green","blue","yellow","brown");
-print_r(array_slice($a,2));
-// array_splice(mag1,start,lenth,mang2) co the dung de them sua xoa theo index
-$a1=array("a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow");
-$a2=array("a"=>"purple","b"=>"orange");
-array_splice($a1,2,1,$a2);
-print_r($a1);
-
-
-
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="index.php" method="post">
+        <label for="">Mã nhóm</label>
+        <input type="text" name="id"> <br>
+        <label for="">Tên nhóm</label>
+        <input type="text" name="nameId"> <br>
+        <label for="">Mô tả</label>
+        <textarea name="desc" cols="30" rows="10"></textarea> <br>
+        <button type="submit" name="btn">Add</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Desc</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+        $fn=fopen("data.txt","r") or die("Lỗi không thể mở file");
+        while(!feof($fn)) { // nếu chưa hêt dòng
+          $item=fgets($fn); // lấy giá trị trê tunwgf dòng của file
+          $fileToConvertArr=explode("\t",$item); // chuyển chuỗi thành mảng
+          echo "<pre/>";
+          print_r($fileToConvertArr);
+          if(!empty($fileToConvertArr[0])){
+            
+        
+      ?>
+            <tr>
+                <td><?=$fileToConvertArr[0];?></td>
+                <td><?=$fileToConvertArr[1];?></td>
+                <td><?=$fileToConvertArr[2];?></td>
+            </tr>
+
+            <?php 
+          };
+        };
+            fclose($fn); // đóng file ?>
+        </tbody>
+    </table>
+</body>
+
+</html>

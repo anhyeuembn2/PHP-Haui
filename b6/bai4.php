@@ -14,7 +14,7 @@
     }
  }
  function check($n){
-    //6=1+2+3
+    
     $tong=0;
     for($i=1;$i<$n;$i++){
         if($n%$i==0){
