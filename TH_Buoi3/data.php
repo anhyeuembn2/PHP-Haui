@@ -10,7 +10,7 @@
 
             <th width="400">Ảnh</th>
             <th>Miêu tả</th>
-            <td>Thành tiền</td>
+            <th>Thành tiền</th>
             <th>Action</th>
 
         </tr>
