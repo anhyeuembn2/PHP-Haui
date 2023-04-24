@@ -71,7 +71,7 @@ $users = mysqli_fetch_all($userSql, MYSQLI_ASSOC);
                 <td>
                     <button class="btn btn-danger">
                         <a href="user-delete.php?id=<?php echo $user['id'] ?>" style="text-decoration:none;color:white"
-                            onClick="return confirm('Bạn chắc chắn muốn xóa ?')">Xóa</a>
+                            onclick="return confirm('Bạn chắc chắn muốn xóa ?')">Xóa</a>
                     </button>
                     <button class="btn btn-warning">
                         <a href="user-update.php?id=<?php echo $user['id'] ?>"
