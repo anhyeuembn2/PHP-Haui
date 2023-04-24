@@ -1,2 +1,3 @@
 N001	Máy tính	Công Nghệ Thông Tin	6	16000	.Screenshot 2023-04-20 085550.png	Máy tính Dell
 N002	Chuột	Kỹ Thuật Phần Mềm	6	15000	.Screenshot 2023-04-22 184319.png	Chuột Gaming
+			
