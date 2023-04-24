@@ -7,13 +7,13 @@ if(isset($_POST['btn'])){
     $qty=trim($_POST['qty']);
     $price=$_POST['price'];
     $desc = str_replace(array("\r", "\n"), '', trim($_POST['desc']));
-    
+    // upload file lên server
     if(isset($_FILES['file'])){
         $file=$_FILES['file'];
         $file_name=$file['name'];
         move_uploaded_file($file['tmp_name'],"images/.$file_name");
     }
-    
+    // kiểm tra xem id,name.... có rỗng không
     if(empty($id)){
         $error['id'] = "Mã hàng không được để trống";
     }
@@ -32,10 +32,11 @@ if(isset($_POST['btn'])){
     if(empty($file_name)){
         $error['file'] = "Ảnh không được để trống";
     }
+    // mở file hang.txt để kiểm tra xem id nhạp mới có bị trùng k
     $file1 = fopen("hang.txt", 'r') or die("Lỗi");
-    $isDuplicated = false;
+    $isDuplicated = false; // tạo ra cơ ban đầu là k trùng
 
-while (!feof($file1)) {
+    while (!feof($file1)) {
     $item = fgets($file1);
     $it = explode("\t", $item);
     if ($it[0] === $id) {
@@ -47,7 +48,7 @@ while (!feof($file1)) {
 
 
 
-if (!$isDuplicated) {
+    if (!$isDuplicated) {
     if (empty($error)) {
         if(file_exists('hang.txt')){
             $file=fopen('hang.txt','a');
