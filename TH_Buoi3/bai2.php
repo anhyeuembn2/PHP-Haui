@@ -80,9 +80,9 @@ if (!$isDuplicated) {
 
         <input type="text" name="id"><?php if(isset($error['id'])): ?>
         <span style="color:red"><?=$error['id']?></span>
-        <?php endif ?>
-        <?php if(isset($error['err'])) : ?>
-        <span style="color:red"><?=$error['err']?></span>
+        <?php else: ?>
+
+        <span style="color:red"><?=(isset($error['err']) ? $error['err'] : "")?></span>
         <?php endif ?>
         <br> <br>
         <label for="">Tên hàng</label>
