@@ -59,7 +59,7 @@ exit;
     </thead>
     <tbody>
         <?php foreach($cart as $key => $value) : ?>
-        <?php $count++?>
+
         <tr>
             <td><?= $value['id'] ?></td>
             <td><?= $value['name'] ?></td>
