@@ -94,6 +94,6 @@ td {
     /* Thêm khoảng cách giữa nội dung và đường viền của các ô */
     text-align: center;
     /* Căn giữa nội dung trong các ô */
-    /*  tenmang as tenbine*/
+    /* tenmang as tenbine*/
 }
 </style>

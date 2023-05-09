@@ -60,9 +60,9 @@
 
         </select> <br> <br>
         <label for="">Số lượng</label>
-        <input type="text" name="qty"> <br> <br>
+        <input type="text" name="qty"> <br><br>
         <label for="">Đon giá</label>
-        <input type="text" name="price"> <br> <br>
+        <input type="text" name="price"> <br><br>
         <label for="">Hình ảnh</label>
         <input type="file" name="file"> <br> <br>
         <button type="submit" name="btn">Thêm</button>
