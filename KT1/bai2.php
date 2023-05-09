@@ -8,10 +8,10 @@
         $kqTinh=tinhTong($n);
     }
  }
-  function giaiThua($n){
+  function giaiThua($x){
      $tich=1;
-     for($i=1;$i<=$n;$i++){
-        $tich.=$i;
+     for($i=1;$i<=$x;$i++){
+        $tich=$tich*$i;
      }
      return $tich;
   }
