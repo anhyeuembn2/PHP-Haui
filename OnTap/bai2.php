@@ -8,7 +8,7 @@ if(isset($_POST['btn'])){
     $n=count($array);
 
     function numberChia5($n, &$arrayNumber){
-        for($i=0;$i<=$n;$i++){
+        for($i=1;$i<$n;$i++){
             if($i%5==0){
                 array_push($arrayNumber,$i);
             }
@@ -16,7 +16,7 @@ if(isset($_POST['btn'])){
     }
 
     function soLe($n, &$arrayLe, &$arrayChan){
-        for($i=0;$i<=$n;$i++){
+        for($i=1;$i<=$n;$i++){
             if($i%2==0){
                 array_push($arrayChan,$i);
             }else{
@@ -31,7 +31,7 @@ if(isset($_POST['btn'])){
          $sum=0;
          $count=0;
          
-         for($i=0;$i<=$n;$i++){
+         for($i=1;$i<=$n;$i++){
             if(!empty($arrayLe[$i])){
                 $sum+=$arrayLe[$i];
                 $count++;
@@ -44,7 +44,7 @@ if(isset($_POST['btn'])){
         $sum=0;
         $count=0;
         
-        for($i=0;$i<=$n;$i++){
+        for($i=1;$i<=$n;$i++){
            if(!empty($arrayChan[$i])){
                $sum+=$arrayChan[$i];
                $count++;
