@@ -1,7 +1,7 @@
 <?php 
  if(isset($_POST['btn'])){
-    $n=$_POST['n'];
-    $error=[];
+    $n=$_POST['n']; // lay gia tri trong o input
+    $error=[]; // ta ra 1 mang chua loi
     if($n<0){
         $error['err']="N phải lớn hơn 0";
     }else{
@@ -11,7 +11,7 @@
   function giaiThua($x){
      $tich=1;
      for($i=1;$i<=$x;$i++){
-        $tich=$tich*$i;
+        $tich=$tich*$i;  //6!=6x5x4x3x2x1
      }
      return $tich;
   }
