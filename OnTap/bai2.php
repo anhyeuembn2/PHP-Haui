@@ -8,7 +8,7 @@ if(isset($_POST['btn'])){
     $n=count($array);
 
     function numberChia5($n, &$arrayNumber){
-        for($i=1;$i<$n;$i++){
+        for($i=1;$i<=$n;$i++){
             if($i%5==0){
                 array_push($arrayNumber,$i);
             }
