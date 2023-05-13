@@ -39,7 +39,7 @@
         <label for="">Nhập mảng</label>
         <input type="text" name="id" value="<?php if(isset($id)) echo $id ?>"> <br>
         <label for="">Mảng sau khi săp xếp</label>
-        <input type="text" value="<?php if(isset($total)) echo $total ?>">
+        <input type="text" value="<?php if(isset($total)) echo $total ?>"> <br>
         <button type="submit" name="btn">Sắp xếp</button>
     </form>
 </body>
