@@ -28,11 +28,11 @@ if(isset($_POST['btn'])){
         rsort($arrayChan); 
     }
 
-     function tbcLe($n,$arrayLe){
+     function tbcLe($n,&$arrayLe){
          $sum=0;
          $count=0;
          
-         for($i=1;$i<=$n;$i++){
+         for($i=0;$i<$n;$i++){
             if(!empty($arrayLe[$i])){
                 $sum+=$arrayLe[$i];
                 $count++;
@@ -41,11 +41,11 @@ if(isset($_POST['btn'])){
          return $count > 0 ? $sum/$count : 0;
      }
 
-     function tbcChan($n,$arrayChan){
+     function tbcChan($n,&$arrayChan){
         $sum=0;
         $count=0;
         
-        for($i=1;$i<=$n;$i++){
+        for($i=0;$i<$n;$i++){
            if(!empty($arrayChan[$i])){
                $sum+=$arrayChan[$i];
                $count++;
