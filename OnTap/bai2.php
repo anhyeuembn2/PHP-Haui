@@ -7,21 +7,22 @@ if(isset($_POST['btn'])){
     $array=explode(",",$number);
     $n=count($array);
 
-    function numberChia5($n, &$arrayNumber){
-        for($i=1;$i<=$n;$i++){
-            if($i%5==0){
-                array_push($arrayNumber,$i);
+    function numberChia5($n, &$arrayNumber,$array1){
+        for($i=0;$i<$n;$i++){
+            if($array1[$i]%5==0){
+                array_push($arrayNumber,$array1[$i]);
             }
+
         }
     }
 
-    function soLe($n, &$arrayLe, &$arrayChan){
-        for($i=1;$i<=$n;$i++){
-            if($i%2==0){
-                array_push($arrayChan,$i);
+    function soLe($n, &$arrayLe, &$arrayChan,$array1){
+        for($i=0;$i<$n;$i++){
+            if($array1[$i]%2==0){
+                array_push($arrayChan,$array1[$i]);
             }else{
-                array_push($arrayLe,$i);
-            }
+                array_push($arrayLe,$array1[$i]);
+            } 
         }
         sort($arrayLe); 
         rsort($arrayChan); 
@@ -53,8 +54,8 @@ if(isset($_POST['btn'])){
         return $count > 0 ? $sum/$count : 0;
     }
 
-    numberChia5($n, $arrayNumber);
-    soLe($n, $arrayLe, $arrayChan);
+    numberChia5($n, $arrayNumber,$array);
+    soLe($n, $arrayLe, $arrayChan,$array);
     $tbcLe = tbcLe($n, $arrayLe);
     $tbcChan = tbcChan($n, $arrayChan);
 }
