@@ -25,17 +25,17 @@
             $thanhTien=35000*$qty;
         }
        switch($month){
-             case 1:
-             case 2:
+            case 1:
+            case 2:
             case 3:
                 $tinhThue=$thanhTien*0.12;
                 break;
             case 4:
-           case 5:
+            case 5:
             case 6:
-                case 7:
-               case 8:
-                    case 9:
+            case 7:
+            case 8:
+            case 9:
                 $tinhThue=$thanhTien*0.15;
                 break;
             case 10:
