@@ -83,7 +83,7 @@
                 <tr>
 
                     <label for="">Mã hàng</label>
-                    <input type="text" name="id" value="<?php if(isset($name)) echo $id ?>"><br>
+                    <input type="text" name="id" value="<?php if(isset($id)) echo $id ?>"><br>
                     <?php  if(isset($error['err2'])):?>
                     <span style="color:red"><?=$error['err2']?></span> <br>
                     <?php endif; ?>

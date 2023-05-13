@@ -103,7 +103,7 @@ if(isset($_POST['btn'])){
                   }
                 ?>"> <br>
                 <label for="">Trung bình công phần tử lẻ</label>
-                <input type="text" name="tbcle" value="<?php if(isset($tbcLe)) echo $tbcChan ?>"> <br>
+                <input type="text" name="tbcle" value="<?php if(isset($tbcLe)) echo $tbcLe ?>"> <br>
                 <label for="">Trung bình cộng phần tử chẵn</label>
                 <input type="text" name="tbcchan" value="<?php if(isset($tbcChan)) echo $tbcChan ?>">
             </tbody>
