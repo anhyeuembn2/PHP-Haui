@@ -62,6 +62,15 @@
         $error['err4']="Không được để trống";
     }
   }
+  if(isset($_POST['btn2'])){
+    $_POST['id']="";
+    $_POST['name']="";
+    $_POST['group']="";
+    $_POST['month']="";
+    $_POST['thue']="";
+    $_POST['traCuoc']="";
+    $_POST['conLai']="";
+  }
 ?>
 
 <!DOCTYPE html>
@@ -128,7 +137,7 @@
             <tfoot>
                 <tr>
                     <td>
-                        <button type="reset" name="btn2">Xóa</button>
+                        <button type="click" name="btn2">Xóa</button>
                         <button type="submit" name="btn">Thành tiền</button>
                     </td>
                 </tr>
