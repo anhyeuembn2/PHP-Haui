@@ -195,7 +195,7 @@ button {
 
                     </td>
                     <td>
-                        <input type="text" name="total" value="<?php if(isset($thanhTien)) ehco $thanhTien ?>" readonly>
+                        <input type="text" name="total" value="<?php if(isset($thanhTien)) echo $thanhTien ?>" readonly>
                     </td>
                 </tr>
             </tbody>
