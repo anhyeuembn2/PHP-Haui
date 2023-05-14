@@ -116,7 +116,7 @@ button {
 
                     </td>
                     <td>
-                        <input type="text" name="name" value="<?php if(isset($name)) ehco $name ?>"> <br>
+                        <input type="text" name="name" value="<?php if(isset($name)) echo $name ?>"> <br>
                         <?php if(isset($error['err1'])) : ?>
                         <span style="color:red"><?=$error['err1']?></span><br>
                         <?php endif;?>
