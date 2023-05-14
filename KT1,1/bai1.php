@@ -19,11 +19,11 @@
             $triGia=400*$qty;
          }
         if(strcmp($maQG,"AU")==0){
-            $triGia=120*$qty;
+            $tinhVanChuyen=120*$qty;
         }else if(strcmp($maQG,"KO")==0){
-            $triGia=100*$qty;
+            $tinhVanChuyen=100*$qty;
         }else if(strcmp($maQG,"GE")==0){
-            $triGia=150*$qty;
+            $tinhVanChuyen=150*$qty;
         }
         if($month==5){
             $thanhTien=($triGia+$tinhVanChuyen)*0.05;
