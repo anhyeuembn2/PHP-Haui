@@ -16,6 +16,7 @@ $result = $connect->query($sql);
     <title>Document</title>
 </head>
 
+
 <body>
     <button><a href="add.php">Thêm</a></button>
     <table>
