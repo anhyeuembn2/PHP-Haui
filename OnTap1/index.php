@@ -1,4 +1,5 @@
 <?php 
+
    if(isset($_POST['btn'])){
       $error=[];
       $id=$_POST['id'];
@@ -14,6 +15,23 @@
           if($desc==""){
             $error['desc']="Không được để trống";
           }
+      }else{
+        
+          if(file_exists("category.txt")){
+             $file=fopen("category.txt","a");
+          }else{
+             $file=fopen("category.txt",'w');
+          }
+         fwrite($file,$id."\t".$name."\t".$desc."\n");
+         if($file){
+            echo "<script>alert('Ghi file thành công')</script>";
+            echo "<script>window.location.href='product.php'</script>";
+         }
+         $id="";
+         $name="";
+         $desc="";
+         
+         fclose($file);
       }
    }
 ?>

@@ -1,1 +1,4 @@
 N002	Cocacola	1	10000
+N001	Pepsi	10	10000
+N001	Pepsi	10	10000
+N001	Pepsi	10	10000

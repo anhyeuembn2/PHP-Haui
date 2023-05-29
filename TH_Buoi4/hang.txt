@@ -1,3 +1,4 @@
 N001	Pepsi	Nươc giải khát	10	10000	Screenshot 2023-04-26 080159.png
 N002	Cocacola	Nươc giải khát	10	10000	Screenshot 2023-04-27 080821.png
 N003	Lavie	Nươc giải khát	10	10000	Screenshot 2023-04-27 080821.png
+N101	Pépiss	Nươc giải khát	1	50	Screenshot 2023-05-14 203100.png
