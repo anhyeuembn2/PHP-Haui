@@ -43,23 +43,23 @@ include "./db.php";
     <form action="add.php" method="post">
         <label for="">Họ và tên</label>
         <input type="text" name="name" value="<?php if(isset($name)) echo $name; ?>"> <br>
-        <?php if(isset($error['name'])) :  ?>
+        <?php if(isset($error['name'])) : ?>
         <span style="color:red"><?=$error['name']?></span><br>
         <?php endif;?>
 
         <label for="">Tháng</label>
         <input type="text" name="month" value="<?php if(isset($month)) echo $month ?>"> <br>
-        <?php if(isset($error['month'])) :  ?>
+        <?php if(isset($error['month'])) : ?>
         <span style="color:red"><?=$error['month']?></span><br>
         <?php endif;?>
         <label for="">Chỉ số đầu</label>
         <input type="text" name="chiSoDau" value="<?php if(isset($dau)) echo $dau ?>"> <br>
-        <?php if(isset($error['dau'])) :  ?>
+        <?php if(isset($error['dau'])) : ?>
         <span style="color:red"><?=$error['dau']?></span><br>
         <?php endif;?>
         <label for="">Chỉ số cuối</label>
         <input type="text" name="chiSoCuoi" value="<?php if(isset($cuoi)) echo $cuoi ?>"> <br>
-        <?php if(isset($error['cuoi'])) :  ?>
+        <?php if(isset($error['cuoi'])) : ?>
         <span style="color:red"><?=$error['cuoi']?></span><br>
         <?php endif;?>
         <button type="submit" name="btn">Add</button>

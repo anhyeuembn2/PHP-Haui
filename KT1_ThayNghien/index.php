@@ -53,7 +53,7 @@ $result = $connect->query($sql);
                     $dauGia = 2927;
                 }
 
-                $soTienPhaiTra = ($soDien * $dauGia)+10%;
+                $soTienPhaiTra = ($soDien * $dauGia)*0.1;   
                 ?>
             <tr>
                 <td><?= $count++ ?></td>

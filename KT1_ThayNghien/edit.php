@@ -22,7 +22,7 @@ include "./db.php";
 
 <body>
     <form action="save-user.php" method="post">
-        <input type="hidden" value="<?php   if(isset($key['id'])) echo $key['id']?>" name="id">
+        <input type="hidden" value="<?php if(isset($key['id'])) echo $key['id']?>" name="id">
         <label for="">Họ và tên</label>
         <input type="text" name="name" value="<?php if(isset($key['tenChuHo'])) echo $key['tenChuHo'] ?>"> <br>
 
