@@ -1,49 +1,55 @@
-<table>
-    <thead>
-        <tr>
-            <th>Mã hàng</th>
-            <th>Tên hàng</th>
-            <th>Số lượng</th>
-            <th>Đơn giá</th>
-            <th>Hình ảnh</th>
-            <th>Chọn mua</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php 
-        
-        $fn=fopen("hang.txt","r") or die("Lỗi không thể mở file");
-        while(!feof($fn)) { // nếu chưa hêt dòng
-          $item=fgets($fn);
-           
-          $fileToConvertArr=explode("\t",$item); // chuyển chuỗi thành mảng
+<!DOCTYPE html>
+<html lang="en">
 
-          if(!empty($fileToConvertArr[0])){
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Mã hàng</th>
+                <th>Tên hàng</th>
+                <th>Số lượng</th>
+                <th>Đơn giá</th>
+                <th>Hình ảnh</th>
+                <th>Chọn mua</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+              $file=fopen("hang.txt","r") or die("Lỗi ");
+              while(!feof($file)){
+                $item=fgets($file);
+                $items=explode("\t",$item);
+                if($items[0]){
             
-        
-      ?>
-        <tr>
+                ?>
+            <tr>
+                <td><?=$items[0]?></td>
+                <td><?=$items[1]?></td>
+                <td><?=$items[3]?></td>
+                <td><?=$items[4]?></td>
+                <td>
+                    <img src="images/<?=$items[5]?>" alt="" width="100">
+                </td>
+                <td><button><a href="cart.php?id=<?=$items[0]?>">Chọn mua</a></button></td>
+            </tr>
+            <?php
+                
+                }
+             
+              }
+              
+             fclose($file);
+            
+            ?>
+        </tbody>
+    </table>
+</body>
 
-            <td><?=$fileToConvertArr[0];?></td>
-            <td><?=$fileToConvertArr[1];?></td>
-
-            <td><?=$fileToConvertArr[3];?></td>
-            <td><?=number_format($fileToConvertArr[4],0,'.','.');?>đ</td>
-            <td height="300">
-                <img src="images/<?=$fileToConvertArr[5]?>" width="300" height="200" alt="">
-            </td>
-            <td>
-                <button><a href="cart.php?id=<?=$fileToConvertArr[0];?>">Chọn mua</a></button>
-            </td>
-
-        </tr>
-
-        <?php 
-          };
-        };
-            fclose($fn); // đóng file ?>
-
-    </tbody>
-    </tbody>
-
-</table>
+</html>

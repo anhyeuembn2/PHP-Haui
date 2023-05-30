@@ -1,31 +1,31 @@
 <?php
- if(isset($_POST['btn'])){
-    $id=$_POST['id']; 
+  if(isset($_POST['btn'])){
+    $id=$_POST['id'];
     $name=$_POST['name'];
     $idGroup=$_POST['idGroup'];
     $qty=$_POST['qty'];
     $price=$_POST['price'];
+    $file_name="";
     if(isset($_FILES['file'])){
         $file=$_FILES['file'];
-       
+      
         $file_name=$file['name'];
         move_uploaded_file($file['tmp_name'],"images/$file_name");
-        
-        if(file_exists("hang.txt")){
-          $file1=fopen("hang.txt",'a');
-        }else{
-          $file1=fopen("hang.txt",'w');
-        }
-        fwrite($file1,$id."\t".$name."\t".$idGroup."\t".$qty."\t".$price."\t".$file_name."\n");
-       
     }
-    if($file1){
+    if(file_exists("hang.txt")){
+        $file=fopen("hang.txt",'a');
+    }else{
+        $file=fopen("hang.txt",'w');
+    }
+    fwrite($file,$id."\t".$name."\t".$idGroup."\t".$qty."\t".$price."\t".$file_name."\n");
+    if($file){
+        echo "<script>alert('Ghi File Thành Công')</script>";
         echo "<script>window.location.href='view-product.php'</script>";
     }
-  fclose($file1);
- }
- 
+    fclose($file);
+  }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,8 +47,8 @@
             <?php
               $file=fopen("category.txt","r") or die("Lỗi ");
               while(!feof($file)){
-                $item=fgets($file); // đọc dữ liệu trên từng dong
-                $items=explode("\t",$item); // chuyern dữ liệu trên dòng thành 1 mảng
+                $item=fgets($file);
+                $items=explode("\t",$item);
                 if($items[0]){
             
                 ?>
@@ -70,7 +70,7 @@
         <input type="text" name="price"> <br>
         <label for="">Hình ảnh</label>
         <input type="file" name="file"> <br>
-        <button type="submit" name="btn">Add</button>
+        <button name="btn" type="submit">Thêm</button>
     </form>
 </body>
 

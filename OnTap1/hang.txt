@@ -1,3 +1,3 @@
-N001	Cocacola	Nước ngọt	10	10000	Screenshot 2023-05-21 133813.png
-N002	Quà tết	Bánh kẹo	10	10000	Screenshot 2023-05-22 170602.png
-N003	Pate	Bánh mì	10	5000	Screenshot 2023-05-07 170115.png
+1	Cocacola	Nuoc giai khat	10	10000	Screenshot 2023-05-08 212452.png
+2	Pepsi	Nuoc giai khat	10	10000	Screenshot 2023-05-12 124823.png
+3	Lavie	Nuoc giai khat	10	10000	Screenshot 2023-05-18 002135.png
