@@ -45,7 +45,7 @@ td {
         <tbody>
             <?php 
             $file = fopen("electronic.txt", 'r') or die("Loi");
-            $count = 0;
+            $count = 1;
             while (!feof($file)) {
                 $item = fgets($file);
                 $arr = explode("\t", $item);
