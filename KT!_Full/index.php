@@ -54,9 +54,9 @@ td {
                     $tienDien = 0;
                     if ($chiSo <= 10) {
                         $tienDien = $chiSo * 5000;
-                    } else if ($chiSo > 10 && $chiSo <= 20) {
+                    } else if ($chiSo <= 20) {
                         $tienDien = (10 * 500) + ($chiSo - 10) * 10000;
-                    } else if ($chiSo > 20 && $chiSo <= 30) {
+                    } else if ($chiSo <= 30) {
                         $tienDien = (10 * 5000) + (10 * 10000) + ($chiSo - 20) * 15000;
                     } else {
                         $tienDien = (10 * 5000) + (10 * 10000) + (10 * 15000) + ($chiSo - 30) * 20000;

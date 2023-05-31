@@ -23,10 +23,10 @@
     $error['soDau']="Khong duoc de trong";
      }
     }else{
-        if(file_exists('water.txt')){
-            $file=fopen("water.txt",'a');
+        if(file_exists('electronic.txt')){
+            $file=fopen("electronic.txt",'a');
         }else{
-            $file=fopen("water.txt",'w');
+            $file=fopen("electronic.txt",'w');
         }
         fwrite($file,$name."\t".$month."\t".$year."\t".$soDau."\t".$soCuoi."\n");
         if($file){

@@ -44,7 +44,7 @@ td {
         </thead>
         <tbody>
             <?php 
-            $file = fopen("water.txt", 'r') or die("Loi");
+            $file = fopen("electronic.txt", 'r') or die("Loi");
             $count = 0;
             while (!feof($file)) {
                 $item = fgets($file);
@@ -54,13 +54,13 @@ td {
                     $tienDien = 0;
                     if ($chiSo <= 50) {
                         $tienDien = $chiSo * 1678;
-                    } else if ($chiSo > 50 && $chiSo <= 100) {
+                    } else if ( $chiSo <= 100) {
                         $tienDien = (50 * 1678) + ($chiSo - 50) *1734 ;
-                    } else if ($chiSo > 100 && $chiSo <= 200) {
+                    } else if ( $chiSo <= 200) {
                         $tienDien = (50* 1678) + (50 * 1734) + ($chiSo - 100) * 2014;
-                    } else if($chiSo>200 && $chiSo<=300){
+                    } else if( $chiSo<=300){
                         $tienDien = (50* 1678) + (50 * 1734) + 100*2014+($chiSo-200)*2536;
-                    }else if($chiSo>300 && $chiSo<=400){
+                    }else if($chiSo<=400){
                         $tienDien = (50* 1678) + (50 * 1734) + 100*2014+100*2536+($chiSo-300)*2834;
                     }else{
                         $tienDien = (50* 1678) + (50 * 1734) + 100*2014+100*2536+100*2834+($chiSo-400)*2927;
