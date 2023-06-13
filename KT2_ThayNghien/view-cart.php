@@ -20,7 +20,7 @@ session_start();
         }
         unset($_SESSION['cart']);
         echo "<script>alert('Thêm thành công')</script>";
-        echo "<script>window.location.href='view-cart.php'</script>";
+        echo "<script>window.location.href='view-orders.php'</script>";
        
   }
  
