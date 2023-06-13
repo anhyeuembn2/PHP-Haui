@@ -1,9 +1,11 @@
 <?php 
+session_start();
  include "./db.php";
  $sql="select * from tblproduct";
  $result=$connect->query($sql);
  $count=1;
 ?>
+
 
 <table>
     <thead>
@@ -11,13 +13,9 @@
             <th>STT</th>
             <th>Mã Hàng</th>
             <th>Tên hàng</th>
-
             <th>Số lượng</th>
             <th>Đơn giá</th>
-
             <th width="400">Hinh Ảnh</th>
-
-
             <th>Chon mua</th>
 
         </tr>
@@ -29,21 +27,18 @@
             <td><?=$item['id']?></td>
             <td><?=$item['tenHang']?></td>
             <td><?=$item['qty']?></td>
-            <td><?=$item['price']?></td>
+            <td><?=number_format($item['price'],0, '.', '.')?></td>
             <td>
                 <img src="upload/<?=$item['image']?>" width="100" alt="">
             </td>
             <td>
-                <form method="post" action="cart.php">
-                    <input type="hidden" name="qty" value="<?=$item['qty']?>">
-                    <input type="hidden" name="id" value="<?=$item['id']?>"> <!-- Updated name attribute -->
-                    <button type="submit">Mua</button>
-                </form>
+                <a href="cart.php?id=<?=$item['id']?>"><button>Mua hàng</button></a>
             </td>
         </tr>
         <?php endforeach;?>
 
     </tbody>
+
 </table>
 
 
