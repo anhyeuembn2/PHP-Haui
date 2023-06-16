@@ -1,4 +1,0 @@
-Nguyen Van A	05	2023	20	150
-nguyễn hải triều	05	2023	20	140
-trieu12	06	2023	10	130
-admin	5	2023	10	35
