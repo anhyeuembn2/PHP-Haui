@@ -1,6 +1,0 @@
-Nguyen Van A	10	2002	10	50
-Nguyen Van B	11	2023	25	50
-Nguyen Van C	11	2023	10	35
-nguyễn hải triều	11	2023	10	35
-trieu12	11	2002	10	35
-Tran Van A	11	2023	10	35
