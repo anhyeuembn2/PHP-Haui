@@ -6,7 +6,7 @@
   if(isset($_POST['btn'])){
   
     $id=$_POST['maNV'];
-    echo $id;
+   
     $sql="select * from nhanvien where MaNV LIKE '%$id%'";
     $kq=$connect->query($sql);
   }

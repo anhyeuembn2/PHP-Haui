@@ -8,7 +8,6 @@ include "./db.php";
         $file=$_FILES['file'];
         $file_name=$file['name'];
         move_uploaded_file($file['tmp_name'],"./upload/$file_name");
-
      }
      $xepLoai=$_POST['xepLoai'];
      $luongNgay=$_POST['luongNgay'];
